@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4b101b">
+<title>Jigmet Dorjey & Jigmet Chondol | Wedding Invitation</title>
+<style>
+:root{--wine:#4b101b;--wine2:#741f30;--gold:#d9b56d;--cream:#fff8e9;--ink:#3d2022}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#7d3440 0,#2b0c14 70%);font-family:Georgia,'Times New Roman',serif;color:var(--cream);display:flex;align-items:center;justify-content:center;padding:24px;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(var(--gold) .7px,transparent .7px);background-size:22px 22px}
+.wrap{width:min(100%,560px);text-align:center;position:relative;z-index:1}
+.kicker{letter-spacing:4px;text-transform:uppercase;font:11px Arial,sans-serif;color:#f1d99f;margin:0 0 22px}
+.envelope-area{height:390px;display:flex;align-items:center;justify-content:center;perspective:1200px;position:relative}
+.envelope{width:min(90vw,430px);height:270px;position:relative;cursor:pointer;filter:drop-shadow(0 22px 24px #16060b99);transition:transform .7s}
+.env-back{position:absolute;inset:0;background:linear-gradient(135deg,#8b3344,#4a101c);border:1px solid #c99d58;border-radius:5px}
+.env-front{position:absolute;inset:0;background:linear-gradient(145deg,#722536,#4a101c);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border-bottom:1px solid #c99d58}
+.env-left,.env-right{position:absolute;inset:0;background:linear-gradient(135deg,#6c2030,#3e0c17);clip-path:polygon(0 0,50% 58%,0 100%)}
+.env-right{clip-path:polygon(100% 0,50% 58%,100% 100%);background:linear-gradient(225deg,#853044,#4b101b)}
+.flap{position:absolute;inset:0 0 auto;height:62%;background:linear-gradient(160deg,#9b4352,#5b1726);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1s ease;z-index:4;border-top:1px solid #d9b56d}
+.seal{position:absolute;z-index:6;left:50%;top:53%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#f4d99b,#b8883f 65%,#805321);color:#571722;border:2px solid #f3d99f;box-shadow:0 3px 12px #21070d88;font-size:21px;font-weight:bold;transition:opacity .4s}
+.hint{font:12px Arial,sans-serif;letter-spacing:1.6px;color:#f3dcae;margin-top:-4px;text-transform:uppercase}
+.open .flap{transform:rotateX(180deg);z-index:1}
+.open .seal{opacity:0;pointer-events:none}
+.open .envelope{transform:translateY(18px) scale(.94)}
+.card{position:relative;margin:-345px auto 0;width:min(92vw,390px);min-height:470px;background:linear-gradient(145deg,#fffaf0,#f1dfbd);color:var(--ink);padding:34px 27px 30px;border:1px solid #d5b16d;box-shadow:0 15px 45px #16060b88;opacity:0;transform:translateY(55px) scale(.86);pointer-events:none;transition:opacity .9s .35s,transform .9s .35s;z-index:5}
+.open .card{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+.card:before{content:"";position:absolute;inset:9px;border:1px solid #c5a05f;pointer-events:none}
+.ornament{color:#a77b39;font-size:23px;letter-spacing:7px;margin:2px 0 17px}
+.small{font:10px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:#89643b}
+.card h1{font-size:29px;line-height:1.22;font-weight:normal;margin:15px 0 12px;color:#5a1a27}
+.amp{font-style:italic;color:#b28a4b;font-size:24px}
+.invite{font-size:14px;line-height:1.7;margin:12px 0}
+.names{font-size:23px;line-height:1.45;color:#5a1a27;margin:18px 0}
+.date{font-size:19px;color:#8a5d2b;letter-spacing:1px;margin:12px 0}
+.venue{font-size:15px;line-height:1.6;margin:8px 0}
+.rule{height:1px;background:linear-gradient(90deg,transparent,#bd9654,transparent);margin:17px 0}
+.countdown{display:flex;justify-content:center;gap:12px;margin:17px 0 4px}
+.unit{min-width:53px}.unit strong{display:block;font-size:21px;font-weight:normal;color:#681e2c}.unit span{font:9px Arial,sans-serif;letter-spacing:1px;color:#89643b}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px auto 0}
+.btn{display:inline-block;padding:11px 15px;border:1px solid #9c733b;background:#5a1725;color:#fff4dc;text-decoration:none;font:11px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.btn.secondary{background:transparent;color:#5a1725}
+.note{font:11px Arial,sans-serif;color:#f0d8a8;line-height:1.6;margin-top:20px}
+@media(max-height:780px){.envelope-area{height:330px}.envelope{height:230px}.card{margin-top:-300px;min-height:440px;padding-top:27px}}
+@media(max-width:390px){.card h1{font-size:25px}.card{padding-left:20px;padding-right:20px}.envelope-area{height:330px}}
+</style>
+</head>
+<body>
+<main class="wrap" id="app">
+  <p class="kicker">A celebration of love & togetherness</p>
+  <div class="envelope-area">
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open wedding invitation">
+      <div class="env-back"></div><div class="env-left"></div><div class="env-right"></div>
+      <div class="env-front"></div><div class="flap"></div>
+      <div class="seal">J&nbsp;♥&nbsp;J</div>
+    </div>
+  </div>
+  <p class="hint" id="hint">Tap the golden seal to open</p>
+
+  <section class="card" aria-label="Wedding invitation">
+    <div class="ornament">✦ ❧ ✦</div>
+    <div class="small">Together with our families</div>
+    <p class="invite">request the pleasure of your gracious presence<br>at the wedding celebration of</p>
+    <h1>Jigmet Dorjey<br><span class="amp">&amp;</span><br>Jigmet Chondol</h1>
+    <div class="rule"></div>
+    <div class="small">Wedding celebration</div>
+    <div class="date">Friday · 13 November 2026</div>
+    <p class="venue"><strong>In the evening</strong><br>Tholey House<br>Khaltsi, Ladakh</p>
+    <div class="rule"></div>
+    <div class="small">Counting down to the celebration</div>
+    <div class="countdown" id="countdown">
+      <div class="unit"><strong id="days">--</strong><span>DAYS</span></div>
+      <div class="unit"><strong id="hours">--</strong><span>HOURS</span></div>
+      <div class="unit"><strong id="minutes">--</strong><span>MINUTES</span></div>
+      <div class="unit"><strong id="seconds">--</strong><span>SECONDS</span></div>
+    </div>
+    <p class="invite">Your presence and blessings will make our day truly special.</p>
+    <div class="actions">
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Tholey+House+Khaltsi+Ladakh">Venue directions</a>
+      <button class="btn secondary" id="share">Share invitation</button>
+    </div>
+  </section>
+  <p class="note">With love, we look forward to celebrating this special day with you.</p>
+</main>
+<script>
+const app=document.getElementById('app'), envelope=document.getElementById('envelope'), hint=document.getElementById('hint');
+function openCard(){app.classList.add('open');hint.textContent='With love, you are invited';}
+envelope.addEventListener('click',openCard);
+envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openCard();}});
+const target=new Date('2026-11-13T18:00:00+05:30').getTime();
+function tick(){
+ let diff=target-Date.now(); if(diff<0) diff=0;
+ const vals={days:Math.floor(diff/86400000),hours:Math.floor(diff%86400000/3600000),minutes:Math.floor(diff%3600000/60000),seconds:Math.floor(diff%60000/1000)};
+ for(const [id,val] of Object.entries(vals)) document.getElementById(id).textContent=String(val).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
+document.getElementById('share').addEventListener('click',async()=>{
+ const data={title:'Wedding Invitation — Jigmet Dorjey & Jigmet Chondol',text:'You are warmly invited to the wedding celebration of Jigmet Dorjey & Jigmet Chondol on the evening of 13 November 2026 at Tholey House, Khaltsi, Ladakh.'};
+ if(navigator.share){try{await navigator.share(data)}catch(e){}}
+ else{try{await navigator.clipboard.writeText(data.text+' '+location.href);alert('Invitation details copied. Paste them into WhatsApp.')}catch(e){alert(data.text)}}
+});
+</script>
+</body>
+</html>
